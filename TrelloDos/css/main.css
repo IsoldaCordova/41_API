@@ -16,13 +16,12 @@ h1{
 textarea{
 	width: 10em;
 }
-.panel-body{
+.jumbotronUno{
 	width: 11em;
 	text-align: center;
 	width: 130%;
-}
-.panel-body:hover{
-	background-color: black;
+	background-color:  #d9d9d9;
+	font-size: 12px;
 }
 #boton{
 	background-color: black;
@@ -41,20 +40,15 @@ textarea{
 button{
 	height: 3em;
 	width: 7em;
-	background-color: gray;
+	background-color: black;
 	color: white!important;
 	border:none;
+	margin-bottom: 5%!important;
 }
 .mt{
 	margin-top: 35.1%;
 }
 
-p{
-	background-color:  #e6e6e6;
-	height: 2em;
-	width: 101%;
-	padding-left: 1%;
-}
 .jumbotron{
 	width: 20%;
 	background-color:  #a6a6a6!important;

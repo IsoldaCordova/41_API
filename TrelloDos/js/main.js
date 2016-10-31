@@ -52,7 +52,7 @@ function añadirLista(){
 		function listas(){
 			//crea los titulos de tareas
 			var cajaP = document.createElement("div");
-				cajaP.setAttribute("class", "panel-body");
+				cajaP.setAttribute("class", "jumbotronUno");
 				cuadritoUno.appendChild(cajaP);
 
 			var p = document.createElement("p");
@@ -83,11 +83,12 @@ function añadirLista(){
  		evt.dataTransfer.setData("text",this.id);// funcion de p
  	}
  	function dejarArrastrar(evt){
- 		// if(.target.style)
- 		idTarjetitas.addClass("color", "purple");
+ 		
+  	
  	}
  	function terminarArrastrar(evt){
-
+ 		evt.target.style.color = "purple";
+ 		
  	}
 
  }
