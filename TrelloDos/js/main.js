@@ -40,44 +40,53 @@ function añadirLista(){
  			botonDos.setAttribute("type","button");
  			botonDos.style.display="block";
 			botonDos.textContent = ("Guardar lista");
+
 		tituloName.appendChild(cuadritoUno);
 		cuadritoUno.appendChild(titulo);
 		cuadritoUno.appendChild(texto);
 		cuadritoUno.appendChild(botonDos);
-		cuadritoUno.addEventListener("drop",soltar);// darle atributo de soltar a mi caja principal que abraza las listas
-		cuadritoUno.addEventListener("dragover", arrastrarSobre);// atributo arrastrar sobre
-		cuadritoUno.addEventListener("dragleave", dejarArrastrar);// atributo dejar-arrastrar
-		
+
 		botonDos.addEventListener("click",listas);// dar click y se hace la funcion Listas
 
 
 		function listas(){
 			//crea los titulos de tareas
+			var cajaP = document.createElement("div");
+				cajaP.setAttribute("class", "panel-body");
+				cuadritoUno.appendChild(cajaP);
+
 			var p = document.createElement("p");
 				p.innerHTML = texto.value;
-				cuadritoUno.appendChild(p)
+				cajaP.appendChild(p);
 				p.draggable = "true";
 				p.setAttribute("id","idTarjetitas"+ contadorId);
+
+				cajaP.addEventListener("drop",soltar);// darle atributo de soltar a mi caja principal que abraza las listas
+		cajaP.addEventListener("dragover", arrastrarSobre);// atributo arrastrar sobre
+		cajaP.addEventListener("dragleave", dejarArrastrar);// atributo dejar-arrastrar
+		
+
 				p.addEventListener("dragstart", arrastrar);// inicio para arrastrar mi tarjeta
 				p.addEventListener("dragend", terminarArrastrar);// terminar de arrastrar mi tarjeta
 				contadorId++;	
 			}
- 	}
- 	function arrastrar(evt){
- 		evt.dataTransfer.setData("text",this.id);// funcion de p
- 	}
- 	function arrastrarSobre(evt){
- 		evt.preventDefault();// dice que haga las funciones establecidas y no actue por accion default
  	}
  	function soltar(evt){
  		var idTransfer = evt.dataTransfer.getData("text");	
  		var pMove = document.getElementById(idTransfer);
  		this.insertBefore(pMove, this.childNodes[1]);
  	}
+ 	function arrastrarSobre(evt){
+ 		evt.preventDefault();// dice que haga las funciones establecidas y no actue por accion default
+ 	}
+ 	function arrastrar(evt){
+ 		evt.dataTransfer.setData("text",this.id);// funcion de p
+ 	}
+ 	function dejarArrastrar(evt){
+ 		
+ 	}
  	function terminarArrastrar(evt){
 
  	}
- 	function dejarArrastrar(evt){
 
- 	}
  }
