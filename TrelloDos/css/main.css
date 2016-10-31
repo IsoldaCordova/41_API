@@ -21,6 +21,9 @@ textarea{
 	text-align: center;
 	width: 130%;
 }
+.panel-body:hover{
+	background-color: black;
+}
 #boton{
 	background-color: black;
 	height: 3em;

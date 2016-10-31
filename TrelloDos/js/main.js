@@ -62,8 +62,8 @@ function añadirLista(){
 				p.setAttribute("id","idTarjetitas"+ contadorId);
 
 				cajaP.addEventListener("drop",soltar);// darle atributo de soltar a mi caja principal que abraza las listas
-		cajaP.addEventListener("dragover", arrastrarSobre);// atributo arrastrar sobre
-		cajaP.addEventListener("dragleave", dejarArrastrar);// atributo dejar-arrastrar
+				cajaP.addEventListener("dragover", arrastrarSobre);// atributo arrastrar sobre
+				cajaP.addEventListener("dragleave", dejarArrastrar);// atributo dejar-arrastrar
 		
 
 				p.addEventListener("dragstart", arrastrar);// inicio para arrastrar mi tarjeta
@@ -83,7 +83,8 @@ function añadirLista(){
  		evt.dataTransfer.setData("text",this.id);// funcion de p
  	}
  	function dejarArrastrar(evt){
- 		
+ 		// if(.target.style)
+ 		idTarjetitas.addClass("color", "purple");
  	}
  	function terminarArrastrar(evt){
 
